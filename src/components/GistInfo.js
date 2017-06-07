@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -29,6 +30,16 @@ const GistInfo = ({ gist }) => {
       </ul>
     </section>
   )
+}
+
+GistInfo.propTypes = {
+  gist: PropTypes.shape({
+    html_url: PropTypes.string.isRequired,
+    created_at: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    owner: PropTypes.object,
+    files: PropTypes.object,
+  })
 }
 
 const Title = styled.h1`

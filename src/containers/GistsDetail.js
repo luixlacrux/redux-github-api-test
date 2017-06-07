@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchGistItem } from '../actions'
 
@@ -18,6 +19,17 @@ class GistsDetail extends Component {
       <GistInfo gist={gist} />
     )
   }
+}
+
+GistsDetail.propTypes = {
+  gist: PropTypes.object,
+  isFetching: PropTypes.bool.isRequired,
+  fetchData: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 }
 
 function mapStateToProps (state) {

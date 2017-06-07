@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -10,6 +11,13 @@ const GistItem = ({ id, description, owner, created_at }) => (
     <GistBottomInfo owner={owner} createdAt={created_at} />
   </Item>
 )
+
+GistItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  owner: PropTypes.object,
+  created_at: PropTypes.string.isRequired,
+}
 
 const Item = styled.li`
   padding: 1em;

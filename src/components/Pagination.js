@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Pagination = ({ onBack, onNext, linkPages = {} }) => (
@@ -7,6 +8,12 @@ const Pagination = ({ onBack, onNext, linkPages = {} }) => (
     <Button onClick={onNext} disabled={!linkPages.next}>Next</Button>
   </Footer>
 )
+
+Pagination.propTypes = {
+  onBack: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
+  linkPages: PropTypes.object,
+}
 
 const Footer = styled.footer`
   display: flex;

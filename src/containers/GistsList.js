@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchGists } from '../actions'
 
@@ -44,6 +45,13 @@ class GistsList extends Component {
       </div>
     )
   }
+}
+
+GistsList.propTypes = {
+  gists: PropTypes.array,
+  linkPages: PropTypes.object,
+  isFetching: PropTypes.bool.isRequired,
+  fetchData: PropTypes.func.isRequired,
 }
 
 function mapStateToProps (state) {
