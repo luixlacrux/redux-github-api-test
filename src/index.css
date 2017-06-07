@@ -16,3 +16,11 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+#nprogress .bar {
+  background: #03A9F4;
+}
+
+#nprogress .spinner {
+  display: none;
+}
