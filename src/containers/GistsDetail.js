@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Nprogress from 'nprogress'
 import { connect } from 'react-redux'
 import { fetchGistItem } from '../actions'
 
@@ -9,6 +10,10 @@ class GistsDetail extends Component {
   componentDidMount () {
     const { id } = this.props.match.params
     this.props.fetchData(id)
+  }
+
+  componentWillUpdate (nextProps) {
+    nextProps.isFetching ? Nprogress.start() : Nprogress.done()
   }
 
   render () {

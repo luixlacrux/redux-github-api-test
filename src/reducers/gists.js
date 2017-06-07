@@ -9,15 +9,15 @@ const initialState = { list: [], linkPages: {}, isFetching: false }
 export function showGists(state = initialState, action) {
   switch (action.type) {
     case REQUEST_GISTS:
-      return {
+      return Object.assign({}, state, {
         isFetching: true,
-      }
+      })
     case SHOW_GISTS:
-      return {
+      return Object.assign({}, state, {
         list: action.list,
         linkPages: action.linkPages,
         isFetching: false,
-      }
+      })
     default:
       return state
   }

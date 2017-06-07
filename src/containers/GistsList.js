@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Nprogress from 'nprogress'
 import { connect } from 'react-redux'
 import { fetchGists } from '../actions'
 
@@ -17,6 +18,10 @@ class GistsList extends Component {
     this.props.fetchData()
   }
 
+  componentWillUpdate (nextProps) {
+    nextProps.isFetching ? Nprogress.start() : Nprogress.done()
+  }
+
   prevPage (e) {
     const { url } = this.props.linkPages.prev
     this.props.fetchData(url)
@@ -30,13 +35,13 @@ class GistsList extends Component {
   render () {
     const { linkPages, gists, isFetching } = this.props
     return (
-      <div>
-        {isFetching &&
+      <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+        {isFetching && !gists.length &&
           <h4>Loading...</h4>
         }
-        {!isFetching &&
-          <Gists gists={gists} />
-        }
+
+        <Gists gists={gists} />
+
         <Pagination
           onNext={this.nextPage}
           onBack={this.prevPage}
