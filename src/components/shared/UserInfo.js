@@ -8,9 +8,12 @@ const UserInfo = ({ owner = {} }) => (
   <User>
     <Avatar src={owner.avatar_url || avatarDefault} />
     <p>
-      <a href={owner.html_url || '#'} target="_blank" rel="noopener noreferrer">
-        {owner.login || 'Anonymous'}
-      </a>
+      {Object.keys(owner).length > 0
+        ? <a href={owner.html_url} target="_blank" rel="noopener noreferrer">
+            {owner.login}
+          </a>
+        : <span>Anonymous</span>
+      }
     </p>
   </User>
 )
