@@ -8,6 +8,10 @@ const Header = () => (
 )
 
 const Wrapper = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: #24292E;
   color: white;
   padding: 1em;

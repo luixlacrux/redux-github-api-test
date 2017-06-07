@@ -22,6 +22,8 @@ const Pages = () => (
 const App = styled.div`
   margin: 0 auto;
   max-width: 1000px;
+  padding-top: 70px;
+  padding-bottom: 16px;
 `
 
 export default Pages
