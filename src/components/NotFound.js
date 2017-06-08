@@ -5,7 +5,7 @@ import Image404 from '../404.png'
 
 const NotFound = () => (
   <Container>
-    <img src={Image404}></img>
+    <img src={Image404} alt="Error 404 not found" />
   </Container>
 )
 
