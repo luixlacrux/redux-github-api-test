@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "file-icons-js": "websemantics/file-icons-js",
     "moment": "^2.18.1",
     "nprogress": "^0.2.0",
     "parse-link-header": "^1.0.0",
