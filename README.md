@@ -1,4 +1,4 @@
-## github-api-test (redux version)
+## A improved version of [github-api-test](https://github.com/luixlacrux/github-api-test) using redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
